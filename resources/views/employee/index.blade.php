@@ -19,6 +19,7 @@
               </nav>
               <div class="container mt-5">
                 <div class="row">
+                  @if(!empty($employees) && $employees->count())
                   @foreach ($employees as $employee)
                     <div class="col-sm">
                       <div class="card">
@@ -54,7 +55,12 @@
                       </div>
                     </div>
                   @endforeach
+                   @else
+                  <p>There are no data.</p>
+            @endif
                 </div>
+
+                {!! $employees->links() !!}
               </div>
                         </div>
                     </div>

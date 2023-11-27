@@ -19,6 +19,7 @@
               </nav>
               <div class="container h-100 mt-5">
                 <div class="row h-100 justify-content-center align-items-center">
+                   @if(!empty($companys) && $companys->count())
                   @foreach ($companys as $company)
                     <div class="col-sm">
                       <div class="card">
@@ -60,8 +61,12 @@
                         </div>
                       </div>
                     </div>
-                  @endforeach
+                   @endforeach
+                   @else
+                  <p>There are no data.</p>
+            @endif
                 </div>
+                 {!! $companys->links() !!}
               </div>
                         </div>
                     </div>
