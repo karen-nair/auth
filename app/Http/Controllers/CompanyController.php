@@ -42,7 +42,7 @@ class CompanyController extends Controller
         $company = new Company();
         $company->name = $request->input('name');
         $company->email = $request->input('email');
-        $company->logo = $filename;
+        $company->logo = (!empty($filename)? $filename: '');
         $company->website = $request->input('website');
         $company->save();
 
