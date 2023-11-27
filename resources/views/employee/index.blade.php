@@ -24,12 +24,14 @@
                       <div class="card">
 
                         <div class="card-header">
-                          <h5 class="card-title">{{ $employee->name }}</h5>
+                          <h5 class="card-title">{{ $employee->first_name }} {{ $employee->last_name }}</h5>
                         </div>
                         <div class="card-body">
-                          <p class="card-text">{{ $employee->email }}</p>
-                          <p class="card-text">{{ $employee->company }}</p>
-                          <p class="card-text">{{ $employee->phone }}</p>
+                          <p class="card-text">Email: {{ $employee->email }}</p>
+                          <p class="card-text">Phone: {{ $employee->phone }}</p>
+
+                          <p class="card-text">Company: <a class="btn btn-sm btn-success" href={{ route('company.show', $employee->company) }}>{{ $employee->company_name }}</a></p>
+
 
                         </div>
 
@@ -41,7 +43,7 @@
                         class="btn btn-primary btn-sm">Edit</a>
                             </div>
                             <div class="col-sm">
-                                 <form action="{{ route('employee.destroy', $employee->id) }}" method="post">
+                                 <form action="{{ route('employee.destroy', <?php echo $employee->id;?>) }}" method="post">
                                   @csrf
                                   @method('DELETE')
                                   <button type="submit" class="btn btn-danger btn-sm">Delete</button>

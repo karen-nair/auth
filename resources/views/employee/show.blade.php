@@ -15,12 +15,11 @@
 
             <div class="card">
                 <div class="card-header">
-                    <h5 class="card-title">{{ $employee->name }}</h5>
+                    <h5 class="card-title">{{ $employee->first_name }} {{ $employee->first_name }}</h5>
                 </div>
                 <div class="card-body">
-                    <p class="card-text">{{ $employee->email }}</p>
-                    <p class="card-text">{{ $employee->logo }}</p>
-                    <p class="card-text">{{ $employee->website }}</p>
+                    <p class="card-text">Email: {{ $employee->email }}</p>
+                    <p class="card-text">Phone: {{ $employee->phone }}</p>
                     <p class="card-text">Company</p>
 
 

@@ -17,8 +17,8 @@
                   </div>
                 </div>
               </nav>
-              <div class="container mt-5">
-                <div class="row">
+              <div class="container h-100 mt-5">
+                <div class="row h-100 justify-content-center align-items-center">
                   @foreach ($companys as $company)
                     <div class="col-sm">
                       <div class="card">

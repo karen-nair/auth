@@ -16,8 +16,14 @@ class EmployeeController extends Controller
      */
     public function index()
     {
-        $employees = Employee::all();
+    $employees = Employee::select(
+            'companies.name as company_name', 'employees.id','employees.first_name', 'employees.last_name', 'employees.email', 'employees.company', 'employees.phone'
+        )
+        ->join('companies', 'companies.id', '=', 'employees.company')
+        ->get();
+
         return view('employee.index', compact('employees'));
+
     }
 
     /**
