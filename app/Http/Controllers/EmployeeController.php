@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\employee;
+use App\Models\Employee;
+use App\Models\Company;
+
 
 class EmployeeController extends Controller
 {
@@ -101,7 +103,9 @@ class EmployeeController extends Controller
       public function show($id)
       {
         $employee = Employee::find($id);
-        return view('employee.show', compact('employee'));
+        $company = Company::where('id', '=', $employee->company)->get();
+
+        return view('employee.show', ['employee'=>$employee, 'companies'=>$company]);
       }
 
       /**

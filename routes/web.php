@@ -24,9 +24,6 @@ use App\Http\Controllers\EmployeeController;
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-// Route::get('/companies', [App\Http\Controllers\CompanyController::class, 'index'])->name('companies');
-// Route::get('/employees', [App\Http\Controllers\EmployeeController::class, 'index'])->name('employees');
-
 
 // returns the home page with all companies
 Route::get('/', CompanyController::class .'@index')->name('company.index');

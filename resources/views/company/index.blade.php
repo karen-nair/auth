@@ -23,7 +23,11 @@
                     <div class="col-sm">
                       <div class="card">
                         <div class="card-header">
-                          <h5 class="card-title">{{ $company->name }}</h5>
+                          <a href="{{ route('company.show', $company->id) }}">
+
+                            <h5 class="card-title">{{ $company->name }}</h5>
+                          </a>
+
                         </div>
                         <div class="card-body">
                           <p class="card-text">{{ $company->email }}</p>

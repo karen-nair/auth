@@ -22,19 +22,14 @@
                   @foreach ($employees as $employee)
                     <div class="col-sm">
                       <div class="card">
+
                         <div class="card-header">
                           <h5 class="card-title">{{ $employee->name }}</h5>
                         </div>
                         <div class="card-body">
                           <p class="card-text">{{ $employee->email }}</p>
-                          <p class="card-text">
-
-                            <img src="<?php echo 'http://localhost/auth/storage/app/public/'.$employee->logo;?>" width="100">
-                           
-                          </p>
-                          
-
-                          <p class="card-text">{{ $employee->website }}</p>
+                          <p class="card-text">{{ $employee->company }}</p>
+                          <p class="card-text">{{ $employee->phone }}</p>
 
                         </div>
 
